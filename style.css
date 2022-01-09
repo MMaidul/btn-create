@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+.header-section {
+  background-color: black;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 19px;
+  color: white;
+}
+.header__menu {
+}
+.header__menu ul {
+  display: flex;
+}
+.header__menu ul li {
+  list-style: none;
+}
+.header__menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 19px;
+  margin-left: 15px;
+  color: white;
+  padding: 10px 15px;
+  position: relative;
+}
+.header__menu ul li a:hover {
+  color: tomato;
+}
+.header__menu ul li a::before,
+.header__menu ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: tomato;
+  transition: width 0.3s ease-in-out;
+}
+.header__menu ul li a::before {
+  top: 5px;
+  left: 12px;
+}
+.header__menu ul li a::after {
+  right: 0;
+  bottom: 10px;
+}
+.header__menu ul li a:hover::before,
+.header__menu ul li a:hover::after {
+  width: 50%;
+}
+
+/* note: jodi a atribute keh display: inline-block nah kore dei tahole z-index kaj korbe nah */
+.btn-container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 5px 15px;
+}
+.btn-left {
+  background-color: tomato;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+}
+.btn-left::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background-color: black;
+  border-radius: 5px;
+  z-index: -1;
+  transition: height 0.3s;
+}
+/* hover ei pase jodi space rekhe lekhe dei tahole kaj korbe nah */
+.btn-left:hover.btn-left::before {
+  height: 100%;
+}
